@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --navy: #0b1220;
       --navy-2: #111b2e;
@@ -698,12 +699,12 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 12px;
     }
 
     .cert-card {
-      padding: 22px;
+      padding: 20px 16px;
       background: #fff;
       border: 1px solid #e3ded4;
       border-radius: 18px;
@@ -873,6 +874,14 @@
        RESPONSIVE
     ========================= */
 
+    @media (max-width: 1100px) {
+
+      .cert-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+    }
+
     @media (max-width: 900px) {
 
       .hero {
@@ -914,6 +923,7 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
+
     }
 
     @media (max-width: 650px) {
@@ -972,7 +982,9 @@
       .stat {
         padding-right: 16px;
       }
+
     }
+
   </style>
 </head>
 
@@ -1037,11 +1049,6 @@
         <div class="photo-frame">
 
           <div class="photo-inner">
-
-            <!-- IMPORTANT:
-                 This points directly to your GitHub image.
-                 Your repository currently contains profile.JPG.
-            -->
 
             <img
               src="https://raw.githubusercontent.com/siridasari001/portfolio/main/profile.JPG"
@@ -1133,7 +1140,7 @@
           <div class="stat">
 
             <div class="stat-num">
-              4
+              5
             </div>
 
             <div class="stat-label">
@@ -1170,7 +1177,7 @@
 
         <p class="section-sub">
           A practical mix of programming, data analysis, machine learning,
-          visualization, databases, and development tools.
+          Generative AI, LLMs, RAG, visualization, databases, and development tools.
         </p>
 
       </div>
@@ -1251,7 +1258,7 @@
           </div>
 
 
-          <!-- Data -->
+          <!-- Data & AI -->
 
           <div class="skill-pill data">
             <span class="skill-dot"></span>
@@ -1301,6 +1308,21 @@
           <div class="skill-pill data">
             <span class="skill-dot"></span>
             kNN
+          </div>
+
+          <div class="skill-pill data">
+            <span class="skill-dot"></span>
+            Generative AI
+          </div>
+
+          <div class="skill-pill data">
+            <span class="skill-dot"></span>
+            Large Language Models (LLMs)
+          </div>
+
+          <div class="skill-pill data">
+            <span class="skill-dot"></span>
+            Retrieval-Augmented Generation (RAG)
           </div>
 
 
@@ -1544,7 +1566,95 @@
           <div>
 
             <div class="project-num">
-              03 · Spring 2025
+              03 · 2026
+            </div>
+
+            <h3 class="project-name">
+              DataSentinel — Data Quality &amp; Anomaly Detection Platform
+            </h3>
+
+            <ul class="project-bullets">
+
+              <li>
+                Built a Python-based data quality and anomaly detection platform
+                using Pandas, NumPy, SQLite, and Streamlit to automate dataset
+                validation and monitoring.
+              </li>
+
+              <li>
+                Engineered validation workflows to detect missing values,
+                duplicate records, schema violations, and behavioral anomalies,
+                improving data readiness for downstream analysis.
+              </li>
+
+              <li>
+                Developed a Streamlit dashboard with SQLite-backed quality results
+                to surface data issues, customer behavior patterns, and anomaly
+                insights for faster troubleshooting and decision-making.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <div class="project-footer">
+
+            <div class="project-tags">
+
+              <span class="project-tag">
+                Python
+              </span>
+
+              <span class="project-tag">
+                Pandas
+              </span>
+
+              <span class="project-tag">
+                NumPy
+              </span>
+
+              <span class="project-tag">
+                Data Quality
+              </span>
+
+              <span class="project-tag">
+                Anomaly Detection
+              </span>
+
+              <span class="project-tag">
+                Streamlit
+              </span>
+
+              <span class="project-tag">
+                SQLite
+              </span>
+
+            </div>
+
+
+            <a
+              class="project-link"
+              href="https://github.com/siridasari001/DataSentinel"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub ↗
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 4 -->
+
+        <article class="project-card">
+
+          <div>
+
+            <div class="project-num">
+              04 · Spring 2025
             </div>
 
             <h3 class="project-name">
@@ -1594,84 +1704,6 @@
               </span>
 
             </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- PROJECT 4 -->
-
-        <article class="project-card">
-
-          <div>
-
-            <div class="project-num">
-              04 · 2026
-            </div>
-
-            <h3 class="project-name">
-              DataSentinel — Data Quality &amp; Anomaly Detection Platform
-            </h3>
-
-            <ul class="project-bullets">
-
-              <li>
-                Built a Python-based data quality monitoring platform for
-                missing values, duplicate records, schema violations,
-                and behavioral anomalies.
-              </li>
-
-              <li>
-                Implemented reusable validation and anomaly-detection workflows
-                with Pandas and NumPy, backed by SQLite.
-              </li>
-
-              <li>
-                Created an interactive Streamlit dashboard to make dataset
-                health easier to inspect.
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <div class="project-footer">
-
-            <div class="project-tags">
-
-              <span class="project-tag">
-                Python
-              </span>
-
-              <span class="project-tag">
-                Pandas
-              </span>
-
-              <span class="project-tag">
-                Data Quality
-              </span>
-
-              <span class="project-tag">
-                Anomaly Detection
-              </span>
-
-              <span class="project-tag">
-                Streamlit
-              </span>
-
-            </div>
-
-
-            <a
-              class="project-link"
-              href="https://github.com/siridasari001/DataSentinel"
-              target="_blank"
-              rel="noopener"
-            >
-              GitHub ↗
-            </a>
 
           </div>
 
@@ -1753,6 +1785,7 @@
           </div>
 
         </article>
+
 
       </div>
 
@@ -1880,6 +1913,7 @@
 
         </div>
 
+
       </div>
 
     </section>
@@ -1910,6 +1944,8 @@
       <div class="cert-grid">
 
 
+        <!-- CERTIFICATION 1 -->
+
         <div class="cert-card">
 
           <div class="cert-mark">
@@ -1926,6 +1962,8 @@
 
         </div>
 
+
+        <!-- CERTIFICATION 2 -->
 
         <div class="cert-card">
 
@@ -1944,6 +1982,8 @@
         </div>
 
 
+        <!-- CERTIFICATION 3 -->
+
         <div class="cert-card">
 
           <div class="cert-mark">
@@ -1961,6 +2001,8 @@
         </div>
 
 
+        <!-- CERTIFICATION 4 -->
+
         <div class="cert-card">
 
           <div class="cert-mark">
@@ -1976,6 +2018,26 @@
           </div>
 
         </div>
+
+
+        <!-- CERTIFICATION 5 — NEW -->
+
+        <div class="cert-card">
+
+          <div class="cert-mark">
+            05
+          </div>
+
+          <div class="cert-name">
+            AI &amp; LLM Engineering Mastery — GenAI, RAG Complete Guide
+          </div>
+
+          <div class="cert-issuer">
+            Udemy
+          </div>
+
+        </div>
+
 
       </div>
 
@@ -2006,7 +2068,7 @@
 
           <p class="contact-copy">
             I'm open to full-time opportunities in Data Engineering,
-            Data Analytics, Machine Learning, and Software Engineering.
+            Data Analytics, Machine Learning, AI, and Software Engineering.
             I'd love to connect.
           </p>
 
@@ -2094,6 +2156,18 @@
             </span>
 
             <span class="education-tag">
+              Generative AI
+            </span>
+
+            <span class="education-tag">
+              LLMs
+            </span>
+
+            <span class="education-tag">
+              RAG
+            </span>
+
+            <span class="education-tag">
               Analytics
             </span>
 
@@ -2104,6 +2178,7 @@
           </div>
 
         </div>
+
 
       </div>
 
