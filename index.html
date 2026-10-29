@@ -1,285 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Siri Chandana Dasari — Data Analytics, Software Development and AI Portfolio">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Siri Chandana Dasari — Data Analytics, Data Engineering and Web Development portfolio">
 <title>Siri Chandana Dasari | Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#f8f6f1; --card:#fffdf8; --text:#172033; --muted:#626b7b;
-  --accent:#e81925; --line:#dedbd4; --nav:#ffffffd9;
-}
-body.dark {
-  --bg:#0b1220; --card:#151e2f; --text:#f4f5f8; --muted:#b5bfd0;
-  --line:#344055; --nav:#101827e8;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;transition:background .25s,color .25s}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-nav{position:sticky;top:0;z-index:100;background:var(--nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-inner{max-width:1150px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-family:"Playfair Display",serif;font-size:1.35rem;font-weight:700}
-.logo span{color:var(--accent)}
-.nav-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-.nav-links a{font-size:.88rem;font-weight:600}
-.nav-links a:hover{color:var(--accent)}
-.theme{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:50%;width:40px;height:40px}
-main{max-width:1100px;margin:auto;padding:0 26px}
-section{padding:90px 0}
-.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:.75rem;font-weight:700;color:var(--accent)}
-h1,h2,h3{line-height:1.2}
-h1,h2{font-family:"Playfair Display",serif}
-h1{font-size:clamp(2.7rem,7vw,5.4rem);margin:18px 0}
-h2{font-size:clamp(2rem,4vw,3.2rem);margin:12px 0 18px}
-h3{font-size:1.25rem}
-p{color:var(--muted)}
-.hero{min-height:80vh;display:flex;align-items:center;padding-top:65px}
-.hero-content{max-width:850px}
-.hero p{max-width:680px;font-size:1.1rem}
-.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:12px 20px;font-weight:700}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:white}
-.btn:hover{transform:translateY(-2px)}
-.section-intro{max-width:680px;margin-bottom:38px}
-.about-grid,.project-grid,.skills-grid,.cert-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
-.panel p{margin-top:10px}
-.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.tag{font-size:.78rem;font-weight:600;border:1px solid var(--line);border-radius:100px;padding:5px 10px;color:var(--muted)}
-/* EXPERIENCE */
-.experience-shell{position:relative;display:flex;flex-direction:column;gap:58px;padding:12px 20px;overflow:visible}
-.experience-item{position:relative;width:min(470px,88%);min-height:260px;padding:30px;border-radius:28px;box-shadow:0 15px 35px #00000012;z-index:1}
-.experience-item:nth-child(odd){align-self:flex-start}
-.experience-item:nth-child(even){align-self:flex-end}
-.experience-item.red{background:#e81925;color:#fff;border:7px solid #ff414a;transform:rotate(-2deg)}
-.experience-item.cream{background:#fffdf8;color:#172033;border:1px solid #e5ded3;transform:rotate(2deg)}
-.experience-item h3,.experience-item .role,.experience-item .company,.experience-item .date,.experience-item li{color:inherit}
-.experience-item .date{font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;opacity:.9}
-.experience-item .role{font-weight:700;font-size:1.1rem;margin:9px 0 3px}
-.experience-item .company{font-weight:600;opacity:.85}
-.experience-item ul{padding-left:19px;margin-top:15px}
-.experience-item li{margin:6px 0;font-size:.92rem}
-.experience-item.red .tag{color:#fff;border-color:#ffffff75;background:#ffffff12}
-.experience-item.cream .tag{color:#424b5b;background:#f2eee7;border-color:#e4ded2}
-/* DOTTED LINES BETWEEN EXPERIENCE CARDS */
-.experience-item:not(:last-child)::after{content:"";position:absolute;top:88%;width:clamp(65px,13vw,150px);height:70px;border-top:3px dotted #8795a8;z-index:-1;pointer-events:none}
-.experience-item:nth-child(odd)::after{right:clamp(-150px,-13vw,-65px);transform:rotate(24deg)}
-.experience-item:nth-child(even)::after{left:clamp(-150px,-13vw,-65px);transform:rotate(-24deg)}
-.experience-item:last-child::after{display:none}
-body.dark .experience-item.cream{background:#fffdf8;color:#172033;border-color:#e5ded3}
-body.dark .experience-item.cream p,body.dark .experience-item.cream li{color:#465064}
-body.dark .experience-item.cream h3,body.dark .experience-item.cream .role{color:#172033}
-body.dark .experience-item.cream .company{color:#956c2e}
-/* PROJECTS */
-.project{overflow:hidden;padding:0}
-.project-banner{height:150px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#e81925,#85121a)}
-.project-banner.light{background:linear-gradient(135deg,#f0e8d9,#d9c7a9)}
-.project-content{padding:25px}
-.project-content h3{margin-bottom:10px}
-.project-content p{font-size:.94rem}
-.project-links{display:flex;gap:16px;margin-top:18px;font-weight:700;font-size:.88rem}
-.project-links a{color:var(--accent)}
-.project-links a:hover{text-decoration:underline}
-.skill-name{font-weight:700;margin-bottom:8px}
-.skill-bar{height:7px;border-radius:10px;background:var(--line);overflow:hidden;margin-top:12px}
-.skill-bar span{display:block;height:100%;background:var(--accent);border-radius:10px}
-.cert{transition:transform .2s}
-.cert:hover{transform:translateY(-5px)}
-.cert p{font-size:.9rem}
-footer{border-top:1px solid var(--line);text-align:center;padding:35px 20px;color:var(--muted)}
-.contact-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.contact-links a{border:1px solid var(--line);padding:10px 16px;border-radius:8px;font-weight:700}
-.contact-links a:hover{border-color:var(--accent);color:var(--accent)}
-@media(max-width:700px){
- .nav-inner{align-items:flex-start;flex-wrap:wrap}
- .nav-links{gap:12px}
- .nav-links a{font-size:.78rem}
- section{padding:65px 0}
- .about-grid,.project-grid,.skills-grid,.cert-grid{grid-template-columns:1fr}
- .experience-shell{padding:8px 0;gap:28px}
- .experience-item{width:94%;align-self:center!important;transform:none!important;padding:23px}
- .experience-item::after{display:none!important}
- .hero{min-height:70vh}
-}
+:root{--bg:#f6f0e4;--cd:#fffaf0;--tx:#231c16;--mu:#5d5246;--gd:#7a5410;--ac:#b3121c;--ln:#dccfb8;--nav:rgba(246,240,228,.92)}
+body.dark{--bg:#14110f;--cd:#201b16;--tx:#f1e9db;--mu:#c9bdaa;--gd:#d9b060;--ac:#ff6a72;--ln:#3a3128;--nav:rgba(20,17,15,.92)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);line-height:1.7;transition:background .3s}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;color:inherit}
+a:focus-visible,button:focus-visible,.fl:focus-visible{outline:3px solid #d9b060;outline-offset:3px}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+nav{position:sticky;top:0;z-index:10;background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--ln)}
+.ni{max-width:1150px;margin:auto;padding:10px 24px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700}.logo i{color:var(--ac);font-style:normal}
+.nl{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.nl a{font-size:14px;font-weight:600}.nl a:hover{text-decoration:underline}
+#th{width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:var(--cd)}
+main{position:relative;z-index:1;max-width:1100px;margin:auto;padding:0 26px}
+section{padding:70px 0}
+.eb{text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:700;color:var(--gd)}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15;margin:0}
+h2{font-size:clamp(32px,5vw,48px);margin:10px 0 28px}
+p{color:var(--mu);margin:0}
+.btn{display:inline-block;border:1px solid var(--ln);border-radius:8px;padding:12px 20px;font-weight:700;background:none}
+.btn.p{background:#c4121d;border-color:#c4121d;color:#fff}
+.lift{transition:transform .25s,box-shadow .25s}.lift:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(0,0,0,.28)}
+.hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;min-height:560px}
+.hero h1{font-size:clamp(40px,7vw,68px);font-weight:700;margin:14px 0}
+.photo{position:relative;flex:0 1 340px;height:420px;margin:0 auto;border-radius:170px 170px 24px 24px;border:2px solid var(--gd);background:var(--cd);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;font-size:14px;color:var(--mu);box-shadow:14px 14px 0 -2px var(--ln)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stats,.g{display:grid;gap:16px}.stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));padding:10px 0 40px}
+.box{background:var(--cd);border:1px solid var(--ln);border-radius:16px;padding:22px}
+.stats b{display:block;font:600 40px 'Playfair Display',serif;color:var(--gd);line-height:1.1;text-align:center}.stats span{display:block;text-align:center;font-size:13px;color:var(--mu);font-weight:600}
+.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;border-top:3px dotted var(--gd);padding-top:26px}
+.tl b.n{font:600 30px 'Playfair Display',serif;color:var(--ac);display:block}
+.xp{display:flex;flex-direction:column;padding:10px 12px}
+.xc{position:relative;width:min(470px,100%);padding:30px;border-radius:28px;transition:transform .25s}
+.xc.r{align-self:flex-start;background:#e81925;color:#fff;border:6px solid #ff5a62;transform:rotate(-2deg)}
+.xc.c{align-self:flex-end;background:#fffaf0;color:#231c16;border:1px solid #e2d8c4;transform:rotate(2deg)}
+.xc:hover{transform:rotate(0) translateY(-8px)}
+.xc:before{content:"";position:absolute;top:-9px;left:50%;margin-left:-8px;width:16px;height:16px;border-radius:50%;background:#d9b060;border:3px solid #14110f}
+.xc .d{font-size:12.5px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700}.xc.c .d,.xc.c .co{color:#7a5410}
+.xc h3{font-size:19px;margin:8px 0 2px;color:inherit}.xc .co{font-weight:600;font-size:15px}
+.xc ul{padding-left:19px;margin:12px 0 0;font-size:14.5px}.xc.c ul{color:#3a3128}.xc li{margin:5px 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.tag{font-size:12.5px;font-weight:600;border:1px solid currentColor;border-radius:100px;padding:3px 10px;opacity:.85}
+.pa{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.pa.rv{flex-direction:row-reverse}
+.arc{width:min(260px,60%);height:90px;border:3px dashed #d9b060;border-top:none;border-left:none;border-radius:0 0 140px 0}.rv .arc{transform:scaleX(-1)}
+.q{font:italic 500 19px 'Playfair Display',serif;color:var(--gd);margin-top:30px;max-width:260px}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.tb{border-radius:100px;padding:10px 20px;min-height:44px;border:1px solid var(--gd);background:var(--cd);font-weight:700;font-size:14px}
+.tb.on{background:var(--tx);color:var(--bg)}.stg .tb.on{background:#c4121d;color:#fff;border-radius:12px}
+.stg .tb{border-radius:12px}.stg .tb b{font:600 20px 'Playfair Display',serif;margin-right:6px}
+#sp{display:flex;flex-wrap:wrap;gap:30px;background:var(--cd);border:1px solid var(--ln);border-radius:20px;padding:30px}
+#sp>div{flex:1 1 320px}.vis{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;min-height:140px}
+.pg{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.pc{border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.pc.dk{background:#151c2c;color:#f1ece0;border:1px solid #2b3550}.pc.lt{background:#f4efe4;color:#1b2336;border:1px solid #d6cdb8}
+.bn{position:relative;height:150px;background:#0e1626;color:#e9e2d0;padding:14px;font-size:9px;font-weight:700;letter-spacing:.5px}
+.bn .pill{position:absolute;left:14px;bottom:10px;background:#0b0f18;color:#e8b565;border:1px solid #6b5326;border-radius:100px;padding:3px 12px;font-size:9px;letter-spacing:1.2px}
+.bn b.l{position:absolute;border:1px solid #5a6bd8;border-radius:6px;padding:2px 7px;font-size:8px}
+.bn .ct{position:absolute;left:50%;top:50%;transform:translate(-50%,-60%);width:74px;height:74px;border-radius:50%;border:2px solid #8e86ff;background:#1a1f45;display:flex;align-items:center;justify-content:center;font-size:14px}
+.br{display:flex;align-items:flex-end;gap:8px;height:70px;margin-top:12px}.br i{width:18px;background:#e8b565}.br i:nth-child(even){background:#4fc3b0}
+.hb{height:7px;border-radius:4px;margin:7px 0;background:#f5a56b}
+.pb{padding:24px;flex:1;display:flex;flex-direction:column}
+.pd{font-size:10.5px;font-weight:700;letter-spacing:2px}.dk .pd{color:#d9b060}.lt .pd{color:#8a5f1c}
+.pb h3{font-size:22px;margin:12px 0 14px;line-height:1.25;color:inherit}
+.pb ul{list-style:none;padding:0;margin:0 0 12px;flex:1;font-size:13.5px;line-height:1.6}.pb li{display:flex;gap:10px;margin-bottom:12px}.pb li:before{content:"—";color:#b07a25}.dk li:before{color:#f1ece0}
+.pt{font-size:11px;font-weight:700;border-radius:100px;padding:4px 11px}.dk .pt{background:#232c40;color:#e8e0cf}.lt .pt{background:#e6dfd0;color:#3a3f4d}
+.pb .tags{margin:8px 0 14px}.pb .tag{opacity:1;border:0;font-size:11px}
+.pl{font-size:12px;font-weight:700;text-decoration:underline}.dk .pl{color:#f1ece0}.lt .pl{color:#8a5f1c}
+.cg{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:10px;background:var(--cd);border:1px solid var(--ln);border-radius:100px;padding:10px 18px;font-weight:600;font-size:15px;transition:transform .2s,border-color .2s}
+.chip:hover{transform:translateY(-3px) scale(1.04);border-color:var(--gd)}.chip:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gd)}
+.fg{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.fl{perspective:1000px;height:210px}.fi{position:relative;height:100%;transition:transform .7s;transform-style:preserve-3d}
+.fl:hover .fi,.fl:focus-within .fi,.fl.on .fi{transform:rotateY(180deg)}
+.ff,.fb{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:20px 22px;display:flex;flex-direction:column}
+.ff{background:#fffdf8;color:#172033;border:1px solid #d9d0bb;box-shadow:inset 0 0 0 5px #fffdf8,inset 0 0 0 6px #e4dcc8}
+.fb{background:#101a2b;color:#f4efe2;border:1px solid #3a4560;transform:rotateY(180deg)}
+.ff .top{display:flex;justify-content:space-between;align-items:center}.ff .top b{font:600 26px 'Playfair Display',serif;color:#8a5f1c}.ff small{font-size:10px;font-weight:700;letter-spacing:1.2px;color:#5a6475}
+.ff .ft{margin-top:auto;border-top:1px solid #e4dcc8;padding-top:10px}
+.fb a{align-self:flex-start;margin-top:auto;border:1px solid #d9b060;border-radius:100px;padding:9px 18px;font-size:13px;font-weight:700}
+.ct2{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.c1{flex:1 1 440px;max-width:540px;background:#fff;color:#172033;border-radius:24px;padding:28px 30px;box-shadow:0 14px 34px rgba(0,0,0,.18)}.c1 p{color:#4a5262}.c1 .eb{color:#8a5a14}
+.c1 a{border:1px solid #cfc8b6;border-radius:100px;padding:10px 18px;font-size:13px;font-weight:700}
+.c2{flex:1 1 340px;max-width:380px;background:#111a2e;color:#f1ece0;border-radius:24px;padding:28px 30px}.c2 small{display:block;font-size:11.5px;color:#9fc0ee;line-height:1.5}
+.c2 hr{border:0;border-top:1px solid #2b3550;margin:18px 0}.c2 .t{font-size:10.5px;font-weight:700;background:#232c40;border-radius:100px;padding:5px 12px}
+footer{position:relative;z-index:1;background:#0b1220;color:#9aa3b8;text-align:center;padding:30px 20px;font-size:12px}footer b{color:#e8b565}
+footer a{position:absolute;right:24px;top:50%;margin-top:-22px;width:44px;height:44px;border-radius:50%;background:#111a2e;border:1px solid #2b3550;color:#f1ece0;display:flex;align-items:center;justify-content:center;font-size:20px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.lift:hover,.xc:hover{transform:none}}
 </style>
 </head>
-
-<body>
-<nav>
- <div class="nav-inner">
-  <a class="logo" href="#home">Siri<span>.</span></a>
-  <div class="nav-links">
-   <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
-   <button class="theme" id="themeToggle" aria-label="Toggle dark mode">☾</button>
-  </div>
- </div>
-</nav>
-
+<body class="dark">
+<canvas id="bg" aria-hidden="true"></canvas>
+<nav><div class="ni"><a class="logo" href="#home">Siri Dasari<i>.</i></a>
+<div class="nl"><a href="#about">About</a><a href="#experience">Experience</a><a href="#approach">Approach</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+<button id="th" aria-label="Toggle light and dark theme"></button></div></div></nav>
 <main>
-<section class="hero" id="home">
- <div class="hero-content">
-  <span class="eyebrow">Data · Software · AI</span>
-  <h1>Hi, I'm Siri Chandana Dasari<span style="color:var(--accent)">.</span></h1>
-  <p>Computer Science graduate passionate about data analytics, data engineering, software development, and building intelligent solutions that turn complex information into meaningful impact.</p>
-  <div class="hero-buttons">
-   <a class="btn primary" href="#projects">Explore my work ↗</a>
-   <a class="btn" href="#contact">Let's connect</a>
-   <a class="btn" href="Siri-Chandana-Dasari-Resume.pdf" download>Download résumé ↓</a>
-  </div>
- </div>
-</section>
+<section id="home" class="hero"><div style="flex:1 1 440px">
+<span class="eb">Data · Software · AI</span><h1>Siri Chandana Dasari<span style="color:var(--ac)">.</span></h1>
+<div style="font-size:20px;font-weight:700">I'm a <span id="role" style="color:var(--ac)">Data Analyst</span><span style="color:var(--gd)">▍</span></div>
+<p style="font:italic 500 25px 'Playfair Display',serif;color:var(--gd);margin:12px 0">Turning messy data into useful questions, answers and apps.</p>
+<p style="font-size:17px;max-width:560px">M.S. Computer Science graduate (University of North Texas) with hands-on experience in SQL, Python, data analysis, data quality and database systems. Based in Prosper, Texas.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px"><a class="btn p" href="#projects">Explore my work ↗</a><a class="btn" href="#contact">Contact &amp; résumé</a></div></div>
+<div class="photo">[ profile.JPG not found ]<img src="profile.JPG" alt="Portrait photo of Siri Chandana Dasari" onerror="this.style.display='none'"></div></section>
 
-<section id="about">
- <div class="section-intro"><span class="eyebrow">A little about me</span><h2>Curious by nature.<br>Analytical by design.</h2>
- <p>I enjoy exploring the story behind data, building practical applications, and making technology useful. My background combines computer science fundamentals with analytics, visualization, and AI-assisted workflows.</p></div>
- <div class="about-grid">
-  <article class="panel"><h3>What drives me</h3><p>Solving real problems, asking better questions, and turning ideas into working solutions through experimentation and thoughtful engineering.</p></article>
-  <article class="panel"><h3>What I'm exploring</h3><p>Data quality, governance, machine learning, retrieval-augmented generation, SQL, dashboards, and scalable data workflows.</p></article>
- </div>
-</section>
+<div class="stats"><div class="box"><b>3.7</b><span>M.S. GPA · UNT</span></div><div class="box"><b>6</b><span>Featured projects</span></div><div class="box"><b>6</b><span>Certifications</span></div><div class="box"><b>3</b><span>Roles to date</span></div></div>
 
-<section id="experience">
- <div class="section-intro"><span class="eyebrow">Where I've contributed</span><h2>The experience journey.</h2><p>Learning by building, collaborating, and solving problems across technology and operations.</p></div>
- <div class="experience-shell">
-  <article class="experience-item red">
-   <div class="date">2026 — Present</div>
-   <h3 class="role">Front-End Developer Volunteer</h3>
-   <div class="company">Virufy · Nonprofit Technology</div>
-   <ul>
-    <li>Contribute to a Next.js, React, TypeScript, and Tailwind CSS website.</li>
-    <li>Improve blog content, profile links, responsive layouts, and reusable UI components.</li>
-    <li>Collaborate through Git, GitHub, and issue-tracking workflows.</li>
-   </ul>
-   <div class="tag-list"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Git</span></div>
-  </article>
-  <article class="experience-item cream">
-   <div class="date">2025 — 2026</div>
-   <h3 class="role">Student Assistant</h3>
-   <div class="company">Child and Family Resource Clinic · UNT</div>
-   <ul>
-    <li>Supported front-desk operations and day-to-day administrative workflows.</li>
-    <li>Handled information carefully and helped maintain organized records.</li>
-    <li>Assisted staff and visitors with scheduling and general inquiries.</li>
-   </ul>
-   <div class="tag-list"><span class="tag">Communication</span><span class="tag">Organization</span><span class="tag">Data Handling</span></div>
-  </article>
-  <article class="experience-item red">
-   <div class="date">2026 — Present</div>
-   <h3 class="role">Technical Project Contributor</h3>
-   <div class="company">Independent Projects</div>
-   <ul>
-    <li>Develop data-quality and governance tools using Python and data libraries.</li>
-    <li>Build portfolio projects involving analytics, SQL, visualization, and AI.</li>
-    <li>Document project decisions and present results through GitHub and a portfolio.</li>
-   </ul>
-   <div class="tag-list"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Data Analytics</span></div>
-  </article>
- </div>
-</section>
+<section id="about"><span class="eb">My story</span><h2>Foundations first, then curiosity.</h2>
+<div class="tl">
+<div><b class="n">01</b><b>Foundation</b><p>B.S. in Computer Science with a Data Science specialization.</p></div>
+<div><b class="n">02</b><b>Exploration</b><p>Software development, data operations, analytics and visualization.</p></div>
+<div><b class="n">03</b><b>MS at UNT</b><p>M.S. in Computer Science at the University of North Texas.</p></div>
+<div><b class="n">04</b><b>Going deeper</b><p>Data quality, governance, machine learning, GenAI and RAG.</p></div>
+<div><b class="n">05</b><b>Now</b><p>Combining data problem-solving with front-end development.</p></div></div></section>
 
-<section id="projects">
- <div class="section-intro"><span class="eyebrow">Selected work</span><h2>Projects built with purpose.</h2><p>A collection of projects exploring data quality, analytics, machine learning, and software systems.</p></div>
- <div class="project-grid">
-  <article class="panel project">
-   <div class="project-banner">⌘</div>
-   <div class="project-content"><span class="eyebrow">AI · Governance</span><h3>Atlas — Data Intelligence Copilot</h3>
-   <p>An enterprise data intelligence and governance copilot combining dataset profiling, data quality checks, metadata, and retrieval-augmented generation concepts.</p>
-   <div class="tag-list"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">Chroma</span><span class="tag">Streamlit</span></div>
-   <div class="project-links"><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></div></div>
-  </article>
-  <article class="panel project">
-   <div class="project-banner light">◈</div>
-   <div class="project-content"><span class="eyebrow">Data Quality</span><h3>DataSentinel</h3>
-   <p>A Python-based data quality and anomaly detection platform that identifies missing values, duplicate records, schema violations, and behavioral anomalies.</p>
-   <div class="tag-list"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">SQLite</span></div>
-   <div class="project-links"><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></div></div>
-  </article>
-  <article class="panel project">
-   <div class="project-banner light">⌂</div>
-   <div class="project-content"><span class="eyebrow">Machine Learning</span><h3>Texas Airbnb Price Prediction</h3>
-   <p>Explored housing-listing data, performed data cleaning and exploratory analysis, and developed a workflow for investigating price patterns.</p>
-   <div class="tag-list"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Visualization</span></div>
-   <div class="project-links"><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></div></div>
-  </article>
-  <article class="panel project">
-   <div class="project-banner">▥</div>
-   <div class="project-content"><span class="eyebrow">Business Intelligence</span><h3>Retail Stock Management</h3>
-   <p>Analyzed retail inventory data and created visual reporting to explore stock levels, sales patterns, and inventory management insights.</p>
-   <div class="tag-list"><span class="tag">Tableau</span><span class="tag">SQL</span><span class="tag">Data Analysis</span></div>
-   <div class="project-links"><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></div></div>
-  </article>
-  <article class="panel project">
-   <div class="project-banner">⌘</div>
-   <div class="project-content"><span class="eyebrow">Software Systems</span><h3>Distributed Bookstore</h3>
-   <p>A software project focused on database-backed workflows and the design of a system for managing bookstore information and operations.</p>
-   <div class="tag-list"><span class="tag">Java</span><span class="tag">Databases</span><span class="tag">Software Design</span></div>
-   <div class="project-links"><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></div></div>
-  </article>
-  <article class="panel project">
-   <div class="project-banner light">⌁</div>
-   <div class="project-content"><span class="eyebrow">Cybersecurity · Data</span><h3>System Call Intrusion Detection</h3>
-   <p>Explored system-call patterns and the use of data analysis and machine learning approaches to distinguish potentially anomalous behavior.</p>
-   <div class="tag-list"><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Security</span></div>
-   <div class="project-links"><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></div></div>
-  </article>
- </div>
-</section>
+<section id="experience"><span class="eb">The journey</span><h2>Follow the path.</h2><div class="xp">
+<article class="xc r"><div class="d">Jul 2023 — Oct 2023</div><h3>Software Engineer Intern</h3><div class="co">Areksoft Pvt Ltd</div>
+<ul><li>Developed responsive frontend interfaces with HTML and CSS, translating Figma designs into user-friendly workflows.</li><li>Analyzed CRM user journeys in Recordrr CRM to find ways to improve navigation, data-entry efficiency and workflow usability.</li></ul>
+<div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Figma</span><span class="tag">CRM Analysis</span></div></article>
+<div class="pa" style="padding-left:120px"><div class="arc"></div><div class="q">“Every dataset starts as a question.”</div></div>
+<article class="xc c"><div class="d">May 2025 — May 2026</div><h3>Data &amp; Operations Assistant</h3><div class="co">Child and Family Resource Clinic · UNT</div>
+<ul><li>Managed and validated client and assessment data across Titanium, ASEBA and PARiConnect for accurate records and reliable retrieval.</li><li>Streamlined data-intake and ticketing workflows and built standardized reporting templates and analytical summaries.</li></ul>
+<div class="tags"><span class="tag">Data Validation</span><span class="tag">Reporting</span><span class="tag">Workflows</span></div></article>
+<div class="pa rv"><div class="arc"></div><div class="q">“Build it, break it, learn from it.”</div></div>
+<article class="xc r"><div class="d">Oct 2026 — Present · Remote</div><h3>Web Developer</h3><div class="co">Virufy · Nonprofit Technology</div>
+<ul><li>Resolve website tickets in Jira, shipping front-end updates and bug fixes.</li><li>Maintain responsive layouts and blog components across screen sizes while minimizing regressions.</li><li>Collaborate via Slack and Git-based workflows to track issues and validate changes.</li></ul>
+<div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span></div></article>
+</div></section>
 
-<section id="skills">
- <div class="section-intro"><span class="eyebrow">My toolkit</span><h2>Skills I bring to the table.</h2><p>A growing toolkit for exploring data, developing software, and communicating findings.</p></div>
- <div class="skills-grid">
-  <article class="panel"><div class="skill-name">Python & Data Analysis</div><p>Pandas, NumPy, data cleaning, exploratory analysis</p><div class="skill-bar"><span style="width:85%"></span></div></article>
-  <article class="panel"><div class="skill-name">SQL & Databases</div><p>MySQL, relational databases, querying, data modeling</p><div class="skill-bar"><span style="width:82%"></span></div></article>
-  <article class="panel"><div class="skill-name">Data Visualization</div><p>Tableau, Power BI, Matplotlib, Plotly</p><div class="skill-bar"><span style="width:80%"></span></div></article>
-  <article class="panel"><div class="skill-name">Web Development</div><p>React, TypeScript, Next.js, HTML, CSS</p><div class="skill-bar"><span style="width:75%"></span></div></article>
-  <article class="panel"><div class="skill-name">AI & Machine Learning</div><p>Scikit-learn, LLM concepts, RAG workflows</p><div class="skill-bar"><span style="width:72%"></span></div></article>
-  <article class="panel"><div class="skill-name">Tools & Collaboration</div><p>Git, GitHub, Streamlit, Jupyter, Agile workflows</p><div class="skill-bar"><span style="width:80%"></span></div></article>
- </div>
-</section>
+<section id="approach"><span class="eb">How I approach a challenge</span><h2>From question to insight.</h2>
+<div class="tabs stg" id="st"></div><div id="sp"></div></section>
 
-<section id="certifications">
- <div class="section-intro"><span class="eyebrow">Continuous learning</span><h2>Certifications & learning.</h2><p>Building practical foundations through structured courses and hands-on learning.</p></div>
- <div class="cert-grid">
-  <article class="panel cert"><h3>Google Data Analytics</h3><p>Data analysis process, spreadsheets, SQL, visualization, and communicating insights.</p><div class="tag-list"><span class="tag">Analytics</span><span class="tag">SQL</span></div><div class="project-links"><a href="https://www.coursera.org/" target="_blank" rel="noopener">Course platform ↗</a></div></article>
-  <article class="panel cert"><h3>AI & LLM Engineering Mastery</h3><p>Learning concepts related to generative AI, large language models, and retrieval-augmented generation.</p><div class="tag-list"><span class="tag">GenAI</span><span class="tag">RAG</span></div><div class="project-links"><a href="https://www.udemy.com/" target="_blank" rel="noopener">Course platform ↗</a></div></article>
-  <article class="panel cert"><h3>SQL Skills</h3><p>Practice with SQL fundamentals, querying, filtering, joins, and data manipulation.</p><div class="tag-list"><span class="tag">SQL</span><span class="tag">Databases</span></div><div class="project-links"><a href="https://www.hackerrank.com/" target="_blank" rel="noopener">HackerRank ↗</a></div></article>
-  <article class="panel cert"><h3>Further Learning</h3><p>Expanding knowledge in cloud data platforms, data engineering, governance, and business intelligence.</p><div class="tag-list"><span class="tag">Snowflake</span><span class="tag">BI</span></div></article>
- </div>
-</section>
+<section id="projects"><span class="eb">Selected work</span><h2>Projects built with purpose.</h2><div class="g pg" id="pg"></div></section>
 
-<section id="contact">
- <div class="section-intro"><span class="eyebrow">Let's connect</span><h2>Have an opportunity in mind?</h2><p>I'm interested in data analytics, data engineering, business intelligence, and software-focused opportunities. Let's connect and build something meaningful.</p>
- <div class="contact-links">
-  <a href="mailto:YOUR_EMAIL@example.com">Email me ↗</a>
-  <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
-  <a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
- </div></div>
-</section>
+<section id="casestudies"><span class="eb">Case studies</span><h2>Inside the builds.</h2><div class="tabs" id="ct"></div><div class="g cg" id="cs"></div></section>
+
+<section id="skills"><span class="eb">Toolkit</span><h2>Skills &amp; Technologies</h2>
+<p style="font-size:17px;max-width:720px;margin-bottom:30px">A practical toolkit spanning data analytics, machine learning, Generative AI, database systems, and modern frontend development.</p>
+<div class="tabs" id="sf"></div><div class="chips" id="sc"></div></section>
+
+<section id="certifications"><span class="eb">Credentials</span><h2>Certifications</h2><div class="g fg" id="fg"></div></section>
+
+<section id="contact"><div class="ct2">
+<div class="c1"><span class="eb" style="font-size:11px">Let's connect</span><h2 style="font-size:30px;margin:12px 0 10px">Have an opportunity in mind?</h2>
+<p style="font-size:14px;margin-bottom:22px">I'm open to opportunities in Data Engineering, Data Analytics, Machine Learning, AI, and Web Development. I'd love to connect.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a href="mailto:siridasari647@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/sirichandanadasari" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/siridasari001" target="_blank" rel="noopener">GitHub ↗</a><a href="tel:+14697342088">Phone ↗</a><a href="Siri_Chandana_Dasari.pdf" download>Résumé ↓</a></div></div>
+<div class="c2"><span class="eb" style="font-size:11px;color:#e8b565">Education</span>
+<h3 style="font-size:21px;margin:12px 0 6px">MS in Computer Science</h3><small>GPA: 3.7 / 4.0<br>University of North Texas · Aug 2024 — May 2026</small><hr>
+<h3 style="font-size:21px;margin-bottom:6px">B.S. in Computer Science</h3><small>Data Science · GPA: 3.5 / 4.0<br>Jun 2020 — May 2024</small><hr>
+<div class="tags" id="et"></div></div></div></section>
 </main>
-
-<footer><p>Designed & built with curiosity by Siri Chandana Dasari · <span id="year"></span></p></footer>
+<footer>Siri Chandana Dasari · <b>Data Engineer &amp; Analyst</b> · <span id="yr">2026</span><a href="#home" aria-label="Back to top">↑</a></footer>
 
 <script>
-const toggle = document.getElementById("themeToggle");
-const savedTheme = localStorage.getItem("siri-portfolio-theme");
-if (savedTheme === "dark") document.body.classList.add("dark");
-function updateThemeButton() {
-  toggle.textContent = document.body.classList.contains("dark") ? "☀" : "☾";
-}
-updateThemeButton();
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem("siri-portfolio-theme",
-    document.body.classList.contains("dark") ? "dark" : "light");
-  updateThemeButton();
-});
-document.getElementById("year").textContent = new Date().getFullYear();
+const $=s=>document.querySelector(s),B=document.body,RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// THEME (saved across reloads)
+try{if(localStorage.getItem('th')==='light')B.classList.remove('dark')}catch(e){}
+const th=$('#th'),sync=()=>th.textContent=B.classList.contains('dark')?'☀':'☾';sync();
+th.onclick=()=>{B.classList.toggle('dark');sync();try{localStorage.setItem('th',B.classList.contains('dark')?'dark':'light')}catch(e){}};
+$('#yr').textContent=new Date().getFullYear();
+// ROTATING ROLE
+const roles=['Data Analyst','Data Engineer','BI Developer','Web Developer'];let ri=0;
+if(!RM)setInterval(()=>{ri=(ri+1)%4;$('#role').textContent=roles[ri]},2200);
+// TABS HELPER
+function tabs(id,labels,cur,fn){$(id).innerHTML=labels.map((l,i)=>`<button class="tb${l===cur||i===cur?' on':''}" data-i="${i}">${l}</button>`).join('');$(id).querySelectorAll('button').forEach(b=>b.onclick=()=>fn(+b.dataset.i))}
+// APPROACH
+const S=[['The Question','Start with the question','Every project begins with a curiosity: what is in this data, and can it be trusted?','Atlas asks questions of datasets in plain language; DataSentinel asks whether the data is sound.','<div style="width:110px;height:110px;border-radius:50%;background:#c4121d;color:#fff;font:72px Playfair Display,serif;display:flex;align-items:center;justify-content:center">?</div><span class="tag">What is wrong with this data?</span>'],
+['Investigate','Investigate the data','Profile columns, look for patterns, and check quality before building anything.','DataSentinel flags missing values, duplicates, schema violations and anomalies.','<div class="br" style="height:110px"><i style="height:90px"></i><i style="height:40px"></i><i style="height:65px"></i><i style="height:25px"></i></div><span class="tag">Illustrative: missing · duplicates · schema · outliers</span>'],
+['Build & Experiment','Build and experiment','Test ideas, assemble workflows, compare approaches and iterate.','Atlas combines profiling, metadata and RAG concepts; the Airbnb project compares six models.','<b class="tag">Ingest</b>→<b class="tag">Profile</b>→<b class="tag">Check</b>→<b class="tag">Iterate</b>'],
+['Insight','Turn it into insight','Package the work into a result that supports a clearer decision.','Airbnb: Random Forest was the strongest baseline (R² = 0.48), and K-Means grouped listings into market segments. Visuals here are illustrative.','<div style="border-left:5px solid var(--ac);padding:10px 18px;max-width:300px"><b>Insight panel</b><p style="font-size:14px">A clear finding, plus the next decision it supports.</p></div>']];
+function stage(i){$('#st').innerHTML=S.map((s,k)=>`<button class="tb${k===i?' on':''}" data-i="${k}"><b>0${k+1}</b>${s[0]}</button>`).join('');
+$('#st').querySelectorAll('button').forEach(b=>b.onclick=()=>stage(+b.dataset.i));
+const s=S[i];$('#sp').innerHTML=`<div><h3 style="font-size:28px;margin-bottom:10px">${s[1]}</h3><p style="margin-bottom:12px">${s[2]}</p><p style="font-size:14px;color:var(--gd)"><b>Real project link:</b> ${s[3]}</p></div><div class="vis">${s[4]}</div>`}
+stage(0);
+// PROJECTS — add repo URLs in the last field of each row (leave '' to show "pending")
+const L=(a)=>a.map(t=>`<b class="l" style="${t[1]}">${t[0]}</b>`).join('');
+const bars=(a,l)=>`<span>${l}</span><div class="br">${a.map(v=>`<i style="height:${v}px"></i>`).join('')}</div>`;
+const BN=[L([['DOCS + SCHEMAS','top:12px;left:12px'],['VECTOR STORE','top:12px;right:12px'],['QUALITY CHECKS','bottom:42px;left:12px'],['SQL GUARDRAILS','bottom:42px;right:12px']])+'<div class="ct">ATLAS</div>',
+bars([30,50,38,64,46,60],'DATA QUALITY MONITOR · ANOMALY ALERT'),bars([40,60,30,50,44,36],'SITE A · NORTH ⇄ SQL SYNC ⇄ SITE B · SOUTH'),
+'<span>TEXAS RENTAL MARKET → PRICE PREDICTION</span><div style="margin-top:16px"><div class="hb" style="width:90%"></div><div class="hb" style="width:62%;background:#f58f8f"></div><div class="hb" style="width:78%;background:#f5c26b"></div></div>',
+bars([30,50,70,46,62,84],'CONTENT TRENDS · TV SHOWS VS MOVIES'),'<span>SYSTEM CALL BEHAVIOR MONITOR</span><div style="margin-top:10px;font:10px monospace;line-height:1.5">open() read() mmap() fork()</div><b class="l" style="right:14px;top:60px;border-color:#ff6a72;color:#ff8a9a">ANOMALY ALERT</b>'];
+const P=[['Atlas — Enterprise Data Intelligence & Governance Copilot','01 · 2026 / FEATURED BUILD','AI GOVERNANCE',['A data-aware AI copilot designed to help teams explore data, understand schemas, and surface governance issues in context.','Developing a hybrid retrieval-augmented generation (RAG) architecture with vector search and SQL-agent guardrails for natural-language data exploration and governance.','Implemented reusable workflows to detect missing values, duplicate records, invalid values, and potential PII columns in structured datasets.','Planned a Streamlit experience bringing together natural-language exploration, SQL-agent guardrails, and data-quality insights.'],['Python','RAG','LangChain / LlamaIndex','Chroma','Streamlit','Data Governance'],'https://github.com/siridasari001/Atlas'],
+['DataSentinel — Data Quality & Anomaly Detection Platform','02 · 2026','DATA QUALITY',['Built a Python-based data quality and anomaly detection platform using Pandas, NumPy, SQLite, and Streamlit to automate dataset validation and monitoring.','Engineered reusable validation and profiling workflows to evaluate dataset completeness, consistency, structural integrity, and unusual customer behavior patterns.','Developed an interactive Streamlit dashboard with SQLite-backed quality results, enabling users to explore detected issues, assess data reliability, and prioritize quality improvements.'],['Python','Pandas','NumPy','Anomaly Detection','Streamlit','SQLite'],''],
+['Global Distributed Bookstore Database System','03 · FALL 2025','DISTRIBUTED DATABASES',['Architected a distributed bookstore database using horizontal fragmentation across three server sites to improve transaction efficiency, scalability, and fault tolerance.','Designed normalized site-level schemas, SQL query protocols, and cross-site synchronization workflows to maintain data consistency and support reliable distributed transactions.'],['SQL','Database Fragmentation','Distributed DB','Data Modeling'],''],
+['Texas Airbnb Price Prediction & Property Segmentation','04 · FALL 2025','MACHINE LEARNING',['Analyzed Texas Airbnb listings using Python, Pandas, and Scikit-learn, with data cleaning, exploratory analysis, and feature analysis to identify factors influencing price.','Compared Linear Regression, Decision Tree, Random Forest, Gradient Boosting, KNN, and SVR using RMSE, MAE, and R²; Random Forest had the strongest baseline at R² = 0.48.','Applied K-Means clustering to segment properties by pricing and characteristics.'],['Python','Pandas','Scikit-learn','Random Forest','K-Means'],''],
+['Netflix Content & Recommendation Insights','05 · SPRING 2025','BIG DATA ANALYTICS',['Performed EDA on TV shows and movies to identify viewing trends, content distribution, and catalog shifts.','Developed interactive dashboards and visual reporting.'],['EDA','Visualization','Dashboards'],''],
+['System Call Intrusion Detection','06 · 2026','CYBERSECURITY',['Implemented process-level intrusion detection by learning normal behavior from system call sequences.','Represented sequences using a TF-IDF-inspired approach and measured behavioral similarity with cosine similarity.'],['Python','Anomaly Detection','TF-IDF','kNN'],'']];
+$('#pg').innerHTML=P.map((p,i)=>`<article class="pc lift ${i%2?'lt':'dk'}"><div class="bn">${BN[i]}<div class="pill">${p[2]}</div></div><div class="pb"><div class="pd">${p[1]}</div><h3>${p[0]}</h3><ul>${p[3].map(b=>`<li><span>${b}</span></li>`).join('')}</ul><div class="tags">${p[4].map(t=>`<span class="tag pt">${t}</span>`).join('')}</div>${p[5]?`<a class="pl" href="${p[5]}" target="_blank" rel="noopener">View on GitHub ↗</a>`:'<span class="pl" style="text-decoration:none">GitHub link pending</span>'}</div></article>`).join('');
+// CASE STUDIES
+const CS=[['Atlas',[['Problem','Teams struggle to understand unfamiliar datasets and spot governance issues such as missing values or PII.'],['Approach','Combine dataset profiling, data-quality validation and metadata analysis with AI-assisted exploration.'],['Implemented','Reusable workflows that detect missing values, duplicate records, invalid values and potential PII columns in structured datasets.'],['In progress','A hybrid RAG architecture with vector search and SQL-agent guardrails for natural-language exploration. Still being developed.']]],
+['DataSentinel',[['Problem','Unreliable data quietly undermines downstream analysis.'],['Approach','Reusable validation and profiling workflows covering completeness, consistency, structural integrity and unusual customer behavior.'],['Implemented','Detection of missing values, duplicates, schema violations and behavioral anomalies, built with Pandas, NumPy and SQLite.'],['Outcome','An interactive Streamlit dashboard with SQLite-backed results to explore issues, assess reliability and prioritize fixes.']]]];
+function cs(i){tabs('#ct',CS.map(c=>c[0]),i,cs);$('#cs').innerHTML=CS[i][1].map(x=>`<div class="box"><span class="eb" style="font-size:11px">${x[0]}</span><p style="margin-top:8px;font-size:14.5px;color:var(--tx)">${x[1]}</p></div>`).join('')}cs(0);
+// SKILLS
+const T=[['Programming','Python','SQL','HTML5','CSS3','Java','JavaScript'],['Data & ML','Data Modeling','Database Fragmentation','EDA','Data Cleaning','Feature Engineering','Predictive Analytics','Anomaly Detection','Data Quality Monitoring','TF-IDF & Cosine Similarity','kNN','Generative AI','Large Language Models (LLMs)','Retrieval-Augmented Generation (RAG)','Pandas','NumPy','Scikit-learn','Schema Validation','Data Profiling','Metadata Analysis','LLM Applications','PII Detection','Vector Search','Hybrid RAG'],['Visualization','Tableau','Interactive Dashboards','Power BI','Matplotlib','Plotly'],['Web Development','React','Next.js','TypeScript','Tailwind CSS','Responsive Web Design'],['Data & ML','MySQL','PostgreSQL','SQLite'],['Tools','Microsoft Azure','Streamlit','Git','Jupyter / Google Colab','Figma','Titanium','PARiConnect','ASEBA','GitHub','Jira','Slack','VS Code','Node.js & npm','MySQL Workbench','LangChain / LlamaIndex','Chroma']];
+const all=[];T.forEach(g=>g.slice(1).forEach(t=>all.push([t,g[0]])));const F=['All','Programming','Data & ML','Visualization','Web Development','Tools'];
+function sk(i){tabs('#sf',F,i,sk);$('#sc').innerHTML=all.filter(x=>i===0||x[1]===F[i]).map(x=>`<span class="chip">${x[0]}</span>`).join('')}sk(0);
+// CERTIFICATIONS (hover, focus or tap to flip)
+const C=[['Tableau Desktop Foundations','Salesforce Certified','Issued March 20, 2026 · Credential ID 7571264','https://sforce.co/verifycerts'],['SQL (Basic)','HackerRank','Certificate verification available','https://www.hackerrank.com/certificates/6178767e40b0'],['SQL (Intermediate)','HackerRank','Certificate verification available','https://www.hackerrank.com/certificates/9c45f5d862d8'],['Microsoft Certified: Azure Fundamentals (AZ-900)','Microsoft','Earned January 26, 2024','https://learn.microsoft.com/en-us/users/siridasari-1688/credentials/certification/azure-fundamentals?tab=credentials-tab'],['Google Data Analytics Professional Certificate','Google · Coursera','Certificate verification available','https://www.coursera.org/account/accomplishments/specialization/certificate/7EKZLICXU0IT'],['AI & LLM Engineering Mastery — GenAI, RAG Complete Guide','Coursera','Certificate verification available','https://www.coursera.org/account/accomplishments/specialization/certificate/SOHQXQ2M7C5U']];
+$('#fg').innerHTML=C.map((c,i)=>`<div class="fl" tabindex="0" aria-label="${c[0]} — press Enter to flip"><div class="fi"><div class="ff"><div class="top"><b>0${i+1}</b><small>HOVER TO FLIP ↻</small></div><b style="font-size:16px;line-height:1.3;margin-top:16px">${c[0]}</b><span style="font-size:13px;color:#4a5262;margin-top:6px">${c[1]}</span><span style="font-size:12px;color:#34527a;margin-top:6px">${c[2]}</span><small class="ft">PROFESSIONAL CREDENTIAL</small></div><div class="fb"><div style="width:36px;height:36px;border:1px solid #d9b060;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#d9b060;font-size:18px">✓</div><small style="color:#c9bdaa;font-weight:700;letter-spacing:1.2px;margin-top:14px">VERIFICATION LINK</small><b style="font:600 19px/1.25 'Playfair Display',serif;margin-top:6px">${c[0]}</b><small style="color:#c9bdaa;margin-top:4px">Issued by ${c[1]}</small><a href="${c[3]}" target="_blank" rel="noopener">Verify credential ↗</a></div></div></div>`).join('');
+document.querySelectorAll('.fl').forEach(f=>{f.onclick=e=>{if(!e.target.closest('a'))f.classList.toggle('on')};f.onkeydown=e=>{if(e.key==='Enter'&&e.target===f)f.classList.toggle('on')}});
+$('#et').innerHTML=['Data Engineering','Machine Learning','Generative AI','LLMs','RAG','Analytics','Distributed Databases'].map(t=>`<span class="t">${t}</span>`).join('');
+document.querySelectorAll('.box,.pc,.chip').forEach(e=>e.classList.add('lift'));
+// INTERACTIVE CONSTELLATION BACKGROUND
+const cv=$('#bg'),cx=cv.getContext('2d');let W,H,N=[],m={x:-999,y:-999};
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;N=Array.from({length:Math.round(W*H/15000)},()=>({x:Math.random()*W,y:Math.random()*H,d:.3+Math.random()}))}
+rs();addEventListener('resize',rs);addEventListener('pointermove',e=>{m.x=e.clientX;m.y=e.clientY});document.addEventListener('mouseleave',()=>{m.x=m.y=-999});
+function draw(){cx.clearRect(0,0,W,H);const c=B.classList.contains('dark')?'217,176,96':'122,84,16',on=m.x>0;
+if(on){const g=cx.createRadialGradient(m.x,m.y,0,m.x,m.y,260);g.addColorStop(0,`rgba(${c},.16)`);g.addColorStop(1,`rgba(${c},0)`);cx.fillStyle=g;cx.fillRect(0,0,W,H)}
+for(const n of N){const x=n.x+(on&&!RM?(m.x-W/2)*n.d*-.03:0),y=n.y+(on&&!RM?(m.y-H/2)*n.d*-.03:0),d=Math.hypot(x-m.x,y-m.y),hot=on&&d<170;
+cx.fillStyle=`rgba(${c},${hot?1:.35})`;cx.beginPath();cx.arc(x,y,hot?3:1.6,0,7);cx.fill();
+if(hot){cx.strokeStyle=`rgba(${c},${.65*(1-d/170)})`;cx.beginPath();cx.moveTo(m.x,m.y);cx.lineTo(x,y);cx.stroke()}}
+requestAnimationFrame(draw)}draw();
 </script>
 </body>
 </html>
