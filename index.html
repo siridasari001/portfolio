@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,7 +146,7 @@ footer a{position:absolute;right:24px;top:50%;margin-top:-22px;width:44px;height
 <section id="casestudies"><span class="eb">Case studies</span><h2>Inside the builds.</h2><div class="tabs" id="ct"></div><div class="g cg" id="cs"></div></section>
 
 <section id="skills"><span class="eb">Toolkit</span><h2>Skills &amp; Technologies</h2>
-<p style="font-size:17px;max-width:720px;margin-bottom:30px">A practical toolkit spanning data analytics, machine learning, Generative AI, database systems, and modern frontend development.</p>
+<p style="font-size:17px;max-width:720px;margin-bottom:30px">A practical toolkit spanning data analytics, cloud data warehousing, data engineering, machine learning, Generative AI, and modern frontend development.</p>
 <div class="tabs" id="sf"></div><div class="chips" id="sc"></div></section>
 
 <section id="certifications"><span class="eb">Credentials</span><h2>Certifications</h2><div class="g fg" id="fg"></div></section>
@@ -200,10 +201,21 @@ $('#pg').innerHTML=P.map((p,i)=>`<article class="pc lift ${i%2?'lt':'dk'}"><div 
 const CS=[['Atlas',[['Problem','Teams struggle to understand unfamiliar datasets and spot governance issues such as missing values or PII.'],['Approach','Combine dataset profiling, data-quality validation and metadata analysis with AI-assisted exploration.'],['Implemented','Reusable workflows that detect missing values, duplicate records, invalid values and potential PII columns in structured datasets.'],['In progress','A hybrid RAG architecture with vector search and SQL-agent guardrails for natural-language exploration. Still being developed.']]],
 ['DataSentinel',[['Problem','Unreliable data quietly undermines downstream analysis.'],['Approach','Reusable validation and profiling workflows covering completeness, consistency, structural integrity and unusual customer behavior.'],['Implemented','Detection of missing values, duplicates, schema violations and behavioral anomalies, built with Pandas, NumPy and SQLite.'],['Outcome','An interactive Streamlit dashboard with SQLite-backed results to explore issues, assess reliability and prioritize fixes.']]]];
 function cs(i){tabs('#ct',CS.map(c=>c[0]),i,cs);$('#cs').innerHTML=CS[i][1].map(x=>`<div class="box"><span class="eb" style="font-size:11px">${x[0]}</span><p style="margin-top:8px;font-size:14.5px;color:var(--tx)">${x[1]}</p></div>`).join('')}cs(0);
+
 // SKILLS
-const T=[['Programming','Python','SQL','HTML5','CSS3','Java','JavaScript','Algorithms','Data Structures'],['Data & ML','Data Modeling','Database Fragmentation','EDA','Data Cleaning','Feature Engineering','Predictive Analytics','Anomaly Detection','Data Quality Monitoring','TF-IDF & Cosine Similarity','kNN','Generative AI','Large Language Models (LLMs)','Retrieval-Augmented Generation (RAG)','Pandas','NumPy','Scikit-learn','Schema Validation','Data Profiling','Metadata Analysis','LLM Applications','PII Detection','Vector Search','Hybrid RAG','AI Code Evaluation','Data Validation'],['Visualization','Tableau','Interactive Dashboards','Power BI','Matplotlib','Plotly'],['Web Development','React','Next.js','TypeScript','Tailwind CSS','Responsive Web Design'],['Data & ML','MySQL','PostgreSQL','SQLite','Snowflake'],['Tools','Microsoft Azure','Streamlit','Git','Jupyter / Google Colab','Figma','Titanium','PARiConnect','ASEBA','GitHub','Jira','Slack','VS Code','Node.js & npm','MySQL Workbench','LangChain / LlamaIndex','Chroma']];
-const all=[];T.forEach(g=>g.slice(1).forEach(t=>all.push([t,g[0]])));const F=['All','Programming','Data & ML','Visualization','Web Development','Tools'];
+const T=[
+['Programming','Python','SQL','HTML5','CSS3','Java','JavaScript','TypeScript','Algorithms','Data Structures'],
+['Data Analytics & ML','Pandas','NumPy','Scikit-learn','EDA','Data Cleaning','Feature Engineering','Predictive Analytics','Machine Learning','Anomaly Detection','Data Quality Monitoring','Data Validation','Schema Validation','TF-IDF & Cosine Similarity','kNN'],
+['Databases & Warehousing','MySQL','PostgreSQL','SQLite','Snowflake','Data Warehousing','Data Modeling','Database Fragmentation','SQL Optimization','Snowflake Architecture','Virtual Warehouses','Data Loading','Semi-Structured Data','Role-Based Access Control (RBAC)','Secure Data Sharing'],
+['Data Engineering & AI','ETL','Data Pipelines','Data Profiling','Metadata Analysis','Generative AI','Large Language Models (LLMs)','Retrieval-Augmented Generation (RAG)','LLM Applications','PII Detection','Vector Search','Hybrid RAG','LangChain / LlamaIndex','Chroma','AI Code Evaluation'],
+['Visualization','Tableau','Power BI','Interactive Dashboards','Matplotlib','Plotly'],
+['Web Development','React','Next.js','TypeScript','Tailwind CSS','Responsive Web Design'],
+['Tools','Microsoft Azure','Streamlit','Git','GitHub','Jupyter / Google Colab','Figma','Jira','Slack','VS Code','Node.js & npm','MySQL Workbench','Titanium','PARiConnect','ASEBA']
+];
+const all=[];T.forEach(g=>g.slice(1).forEach(t=>all.push([t,g[0]])));
+const F=['All','Programming','Data Analytics & ML','Databases & Warehousing','Data Engineering & AI','Visualization','Web Development','Tools'];
 function sk(i){tabs('#sf',F,i,sk);$('#sc').innerHTML=all.filter(x=>i===0||x[1]===F[i]).map(x=>`<span class="chip">${x[0]}</span>`).join('')}sk(0);
+
 // CERTIFICATIONS (hover, focus or tap to flip)
 const C=[['Tableau Desktop Foundations','Salesforce Certified','Issued March 20, 2026 · Credential ID 7571264','https://sforce.co/verifycerts'],['SQL (Basic)','HackerRank','Certificate verification available','https://www.hackerrank.com/certificates/6178767e40b0'],['SQL (Intermediate)','HackerRank','Certificate verification available','https://www.hackerrank.com/certificates/9c45f5d862d8'],['Microsoft Certified: Azure Fundamentals (AZ-900)','Microsoft','Earned January 26, 2024','https://learn.microsoft.com/en-us/users/siridasari-1688/credentials/certification/azure-fundamentals?tab=credentials-tab'],['Google Data Analytics Professional Certificate','Google · Coursera','Certificate verification available','https://www.coursera.org/account/accomplishments/specialization/certificate/7EKZLICXU0IT'],['AI & LLM Engineering Mastery — GenAI, RAG Complete Guide','Coursera','Certificate verification available','https://www.coursera.org/account/accomplishments/specialization/certificate/SOHQXQ2M7C5U'],
 ['SnowPro Core Certification','Snowflake','Issued November 14, 2026 · Valid until Nov 14, 2028 · Credential ID S169233-261114-COF','https://achieve.snowflake.com/99f604ac-dea1-4bff-8c2a-01afd74ecd49']];
@@ -211,6 +223,7 @@ $('#fg').innerHTML=C.map((c,i)=>`<div class="fl" tabindex="0" aria-label="${c[0]
 document.querySelectorAll('.fl').forEach(f=>{f.onclick=e=>{if(!e.target.closest('a'))f.classList.toggle('on')};f.onkeydown=e=>{if(e.key==='Enter'&&e.target===f)f.classList.toggle('on')}});
 $('#et').innerHTML=['Data Engineering','Machine Learning','Generative AI','LLMs','RAG','Analytics','Distributed Databases'].map(t=>`<span class="t">${t}</span>`).join('');
 document.querySelectorAll('.box,.pc,.chip').forEach(e=>e.classList.add('lift'));
+
 // INTERACTIVE CONSTELLATION BACKGROUND
 const cv=$('#bg'),cx=cv.getContext('2d');let W,H,N=[],m={x:-999,y:-999};
 function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;N=Array.from({length:Math.round(W*H/15000)},()=>({x:Math.random()*W,y:Math.random()*H,d:.3+Math.random()}))}
