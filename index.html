@@ -33,9 +33,22 @@ p{color:var(--mu);margin:0}
 .hero h1{font-size:clamp(40px,7vw,68px);font-weight:700;margin:14px 0}
 .photo{position:relative;flex:0 1 340px;height:420px;margin:0 auto;border-radius:170px 170px 24px 24px;border:2px solid var(--gd);background:var(--cd);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;font-size:14px;color:var(--mu);box-shadow:14px 14px 0 -2px var(--ln)}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.stats,.g{display:grid;gap:16px}.stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));padding:10px 0 40px}
+
+/* RESPONSIVE STATISTICS */
+.stats,.g{display:grid;gap:16px}
+.stats{grid-template-columns:repeat(4,minmax(0,1fr));padding:10px 0 40px}
+@media(max-width:760px){
+.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+}
+@media(max-width:560px){
+.stats .box{padding:16px 10px}
+.stats b{font-size:34px}
+.stats span{font-size:12px}
+}
+
 .box{background:var(--cd);border:1px solid var(--ln);border-radius:16px;padding:22px}
-.stats b{display:block;font:600 40px 'Playfair Display',serif;color:var(--gd);line-height:1.1;text-align:center}.stats span{display:block;text-align:center;font-size:13px;color:var(--mu);font-weight:600}
+.stats b{display:block;font:600 40px 'Playfair Display',serif;color:var(--gd);line-height:1.1;text-align:center}
+.stats span{display:block;text-align:center;font-size:13px;color:var(--mu);font-weight:600}
 .tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;border-top:3px dotted var(--gd);padding-top:26px}
 .tl b.n{font:600 30px 'Playfair Display',serif;color:var(--ac);display:block}
 .xp{display:flex;flex-direction:column;padding:10px 12px}
@@ -44,54 +57,90 @@ p{color:var(--mu);margin:0}
 .xc.c{align-self:flex-end;background:#fffaf0;color:#231c16;border:1px solid #e2d8c4;transform:rotate(2deg)}
 .xc:hover{transform:rotate(0) translateY(-8px)}
 .xc:before{content:"";position:absolute;top:-9px;left:50%;margin-left:-8px;width:16px;height:16px;border-radius:50%;background:#d9b060;border:3px solid #14110f}
-.xc .d{font-size:12.5px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700}.xc.c .d,.xc.c .co{color:#7a5410}
-.xc h3{font-size:19px;margin:8px 0 2px;color:inherit}.xc .co{font-weight:600;font-size:15px}
-.xc ul{padding-left:19px;margin:12px 0 0;font-size:14.5px}.xc.c ul{color:#3a3128}.xc li{margin:5px 0}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.tag{font-size:12.5px;font-weight:600;border:1px solid currentColor;border-radius:100px;padding:3px 10px;opacity:.85}
-.pa{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.pa.rv{flex-direction:row-reverse}
-.arc{width:min(260px,60%);height:90px;border:3px dashed #d9b060;border-top:none;border-left:none;border-radius:0 0 140px 0}.rv .arc{transform:scaleX(-1)}
+.xc .d{font-size:12.5px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700}
+.xc.c .d,.xc.c .co{color:#7a5410}
+.xc h3{font-size:19px;margin:8px 0 2px;color:inherit}
+.xc .co{font-weight:600;font-size:15px}
+.xc ul{padding-left:19px;margin:12px 0 0;font-size:14.5px}
+.xc.c ul{color:#3a3128}.xc li{margin:5px 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{font-size:12.5px;font-weight:600;border:1px solid currentColor;border-radius:100px;padding:3px 10px;opacity:.85}
+.pa{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}
+.pa.rv{flex-direction:row-reverse}
+.arc{width:min(260px,60%);height:90px;border:3px dashed #d9b060;border-top:none;border-left:none;border-radius:0 0 140px 0}
+.rv .arc{transform:scaleX(-1)}
 .q{font:italic 500 19px 'Playfair Display',serif;color:var(--gd);margin-top:30px;max-width:260px}
 .tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
 .tb{border-radius:100px;padding:10px 20px;min-height:44px;border:1px solid var(--gd);background:var(--cd);font-weight:700;font-size:14px}
-.tb.on{background:var(--tx);color:var(--bg)}.stg .tb.on{background:#c4121d;color:#fff;border-radius:12px}
-.stg .tb{border-radius:12px}.stg .tb b{font:600 20px 'Playfair Display',serif;margin-right:6px}
+.tb.on{background:var(--tx);color:var(--bg)}
+.stg .tb.on{background:#c4121d;color:#fff;border-radius:12px}
+.stg .tb{border-radius:12px}
+.stg .tb b{font:600 20px 'Playfair Display',serif;margin-right:6px}
 #sp{display:flex;flex-wrap:wrap;gap:30px;background:var(--cd);border:1px solid var(--ln);border-radius:20px;padding:30px}
-#sp>div{flex:1 1 320px}.vis{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;min-height:140px}
+#sp>div{flex:1 1 320px}
+.vis{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;min-height:140px}
 .pg{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
 .pc{border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-.pc.dk{background:#151c2c;color:#f1ece0;border:1px solid #2b3550}.pc.lt{background:#f4efe4;color:#1b2336;border:1px solid #d6cdb8}
+.pc.dk{background:#151c2c;color:#f1ece0;border:1px solid #2b3550}
+.pc.lt{background:#f4efe4;color:#1b2336;border:1px solid #d6cdb8}
 .bn{position:relative;height:150px;background:#0e1626;color:#e9e2d0;padding:14px;font-size:9px;font-weight:700;letter-spacing:.5px}
 .bn .pill{position:absolute;left:14px;bottom:10px;background:#0b0f18;color:#e8b565;border:1px solid #6b5326;border-radius:100px;padding:3px 12px;font-size:9px;letter-spacing:1.2px}
 .bn b.l{position:absolute;border:1px solid #5a6bd8;border-radius:6px;padding:2px 7px;font-size:8px}
 .bn .ct{position:absolute;left:50%;top:50%;transform:translate(-50%,-60%);width:74px;height:74px;border-radius:50%;border:2px solid #8e86ff;background:#1a1f45;display:flex;align-items:center;justify-content:center;font-size:14px}
-.br{display:flex;align-items:flex-end;gap:8px;height:70px;margin-top:12px}.br i{width:18px;background:#e8b565}.br i:nth-child(even){background:#4fc3b0}
+.br{display:flex;align-items:flex-end;gap:8px;height:70px;margin-top:12px}
+.br i{width:18px;background:#e8b565}
+.br i:nth-child(even){background:#4fc3b0}
 .hb{height:7px;border-radius:4px;margin:7px 0;background:#f5a56b}
 .pb{padding:24px;flex:1;display:flex;flex-direction:column}
-.pd{font-size:10.5px;font-weight:700;letter-spacing:2px}.dk .pd{color:#d9b060}.lt .pd{color:#8a5f1c}
+.pd{font-size:10.5px;font-weight:700;letter-spacing:2px}
+.dk .pd{color:#d9b060}.lt .pd{color:#8a5f1c}
 .pb h3{font-size:22px;margin:12px 0 14px;line-height:1.25;color:inherit}
-.pb ul{list-style:none;padding:0;margin:0 0 12px;flex:1;font-size:13.5px;line-height:1.6}.pb li{display:flex;gap:10px;margin-bottom:12px}.pb li:before{content:"—";color:#b07a25}.dk li:before{color:#f1ece0}
-.pt{font-size:11px;font-weight:700;border-radius:100px;padding:4px 11px}.dk .pt{background:#232c40;color:#e8e0cf}.lt .pt{background:#e6dfd0;color:#3a3f4d}
-.pb .tags{margin:8px 0 14px}.pb .tag{opacity:1;border:0;font-size:11px}
-.pl{font-size:12px;font-weight:700;text-decoration:underline}.dk .pl{color:#f1ece0}.lt .pl{color:#8a5f1c}
+.pb ul{list-style:none;padding:0;margin:0 0 12px;flex:1;font-size:13.5px;line-height:1.6}
+.pb li{display:flex;gap:10px;margin-bottom:12px}
+.pb li:before{content:"—";color:#b07a25}.dk li:before{color:#f1ece0}
+.pt{font-size:11px;font-weight:700;border-radius:100px;padding:4px 11px}
+.dk .pt{background:#232c40;color:#e8e0cf}
+.lt .pt{background:#e6dfd0;color:#3a3f4d}
+.pb .tags{margin:8px 0 14px}
+.pb .tag{opacity:1;border:0;font-size:11px}
+.pl{font-size:12px;font-weight:700;text-decoration:underline}
+.dk .pl{color:#f1ece0}.lt .pl{color:#8a5f1c}
 .cg{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .chips{display:flex;flex-wrap:wrap;gap:12px}
 .chip{display:inline-flex;align-items:center;gap:10px;background:var(--cd);border:1px solid var(--ln);border-radius:100px;padding:10px 18px;font-weight:600;font-size:15px;transition:transform .2s,border-color .2s}
-.chip:hover{transform:translateY(-3px) scale(1.04);border-color:var(--gd)}.chip:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gd)}
-.fg{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
-.fl{perspective:1000px;height:210px}.fi{position:relative;height:100%;transition:transform .7s;transform-style:preserve-3d}
+.chip:hover{transform:translateY(-3px) scale(1.04);border-color:var(--gd)}
+.chip:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gd)}
+
+/* RESPONSIVE CERTIFICATION GRID */
+.fg{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){
+.fg{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+.fg{grid-template-columns:1fr}
+}
+
+.fl{perspective:1000px;height:210px}
+.fi{position:relative;height:100%;transition:transform .7s;transform-style:preserve-3d}
 .fl:hover .fi,.fl:focus-within .fi,.fl.on .fi{transform:rotateY(180deg)}
 .ff,.fb{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:20px 22px;display:flex;flex-direction:column}
 .ff{background:#fffdf8;color:#172033;border:1px solid #d9d0bb;box-shadow:inset 0 0 0 5px #fffdf8,inset 0 0 0 6px #e4dcc8}
 .fb{background:#101a2b;color:#f4efe2;border:1px solid #3a4560;transform:rotateY(180deg)}
-.ff .top{display:flex;justify-content:space-between;align-items:center}.ff .top b{font:600 26px 'Playfair Display',serif;color:#8a5f1c}.ff small{font-size:10px;font-weight:700;letter-spacing:1.2px;color:#5a6475}
+.ff .top{display:flex;justify-content:space-between;align-items:center}
+.ff .top b{font:600 26px 'Playfair Display',serif;color:#8a5f1c}
+.ff small{font-size:10px;font-weight:700;letter-spacing:1.2px;color:#5a6475}
 .ff .ft{margin-top:auto;border-top:1px solid #e4dcc8;padding-top:10px}
 .fb a{align-self:flex-start;margin-top:auto;border:1px solid #d9b060;border-radius:100px;padding:9px 18px;font-size:13px;font-weight:700}
 .ct2{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
-.c1{flex:1 1 440px;max-width:540px;background:#fff;color:#172033;border-radius:24px;padding:28px 30px;box-shadow:0 14px 34px rgba(0,0,0,.18)}.c1 p{color:#4a5262}.c1 .eb{color:#8a5a14}
+.c1{flex:1 1 440px;max-width:540px;background:#fff;color:#172033;border-radius:24px;padding:28px 30px;box-shadow:0 14px 34px rgba(0,0,0,.18)}
+.c1 p{color:#4a5262}.c1 .eb{color:#8a5a14}
 .c1 a{border:1px solid #cfc8b6;border-radius:100px;padding:10px 18px;font-size:13px;font-weight:700}
-.c2{flex:1 1 340px;max-width:380px;background:#111a2e;color:#f1ece0;border-radius:24px;padding:28px 30px}.c2 small{display:block;font-size:11.5px;color:#9fc0ee;line-height:1.5}
-.c2 hr{border:0;border-top:1px solid #2b3550;margin:18px 0}.c2 .t{font-size:10.5px;font-weight:700;background:#232c40;border-radius:100px;padding:5px 12px}
-footer{position:relative;z-index:1;background:#0b1220;color:#9aa3b8;text-align:center;padding:30px 20px;font-size:12px}footer b{color:#e8b565}
+.c2{flex:1 1 340px;max-width:380px;background:#111a2e;color:#f1ece0;border-radius:24px;padding:28px 30px}
+.c2 small{display:block;font-size:11.5px;color:#9fc0ee;line-height:1.5}
+.c2 hr{border:0;border-top:1px solid #2b3550;margin:18px 0}
+.c2 .t{font-size:10.5px;font-weight:700;background:#232c40;border-radius:100px;padding:5px 12px}
+footer{position:relative;z-index:1;background:#0b1220;color:#9aa3b8;text-align:center;padding:30px 20px;font-size:12px}
+footer b{color:#e8b565}
 footer a{position:absolute;right:24px;top:50%;margin-top:-22px;width:44px;height:44px;border-radius:50%;background:#111a2e;border:1px solid #2b3550;color:#f1ece0;display:flex;align-items:center;justify-content:center;font-size:20px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.lift:hover,.xc:hover{transform:none}}
 </style>
@@ -176,7 +225,6 @@ footer a{position:absolute;right:24px;top:50%;margin-top:-22px;width:44px;height
 
 </div></section>
 
-
 <section id="approach"><span class="eb">How I approach a challenge</span><h2>From question to insight.</h2>
 <div class="tabs stg" id="st"></div><div id="sp"></div></section>
 
@@ -203,17 +251,16 @@ footer a{position:absolute;right:24px;top:50%;margin-top:-22px;width:44px;height
 
 <script>
 const $=s=>document.querySelector(s),B=document.body,RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
-// THEME (saved across reloads)
 try{if(localStorage.getItem('th')==='light')B.classList.remove('dark')}catch(e){}
 const th=$('#th'),sync=()=>th.textContent=B.classList.contains('dark')?'☀':'☾';sync();
 th.onclick=()=>{B.classList.toggle('dark');sync();try{localStorage.setItem('th',B.classList.contains('dark')?'dark':'light')}catch(e){}};
 $('#yr').textContent=new Date().getFullYear();
-// ROTATING ROLE
+
 const roles=['Data Analyst','Data Engineer','BI Developer','Web Developer'];let ri=0;
 if(!RM)setInterval(()=>{ri=(ri+1)%4;$('#role').textContent=roles[ri]},2200);
-// TABS HELPER
+
 function tabs(id,labels,cur,fn){$(id).innerHTML=labels.map((l,i)=>`<button class="tb${l===cur||i===cur?' on':''}" data-i="${i}">${l}</button>`).join('');$(id).querySelectorAll('button').forEach(b=>b.onclick=()=>fn(+b.dataset.i))}
-// APPROACH
+
 const S=[['The Question','Start with the question','Every project begins with a curiosity: what is in this data, and can it be trusted?','Atlas asks questions of datasets in plain language; DataSentinel asks whether the data is sound.','<div style="width:110px;height:110px;border-radius:50%;background:#c4121d;color:#fff;font:72px Playfair Display,serif;display:flex;align-items:center;justify-content:center">?</div><span class="tag">What is wrong with this data?</span>'],
 ['Investigate','Investigate the data','Profile columns, look for patterns, and check quality before building anything.','DataSentinel flags missing values, duplicates, schema violations and anomalies.','<div class="br" style="height:110px"><i style="height:90px"></i><i style="height:40px"></i><i style="height:65px"></i><i style="height:25px"></i></div><span class="tag">Illustrative: missing · duplicates · schema · outliers</span>'],
 ['Build & Experiment','Build and experiment','Test ideas, assemble workflows, compare approaches and iterate.','Atlas combines profiling, metadata and RAG concepts; the Airbnb project compares six models.','<b class="tag">Ingest</b>→<b class="tag">Profile</b>→<b class="tag">Check</b>→<b class="tag">Iterate</b>'],
@@ -222,13 +269,14 @@ function stage(i){$('#st').innerHTML=S.map((s,k)=>`<button class="tb${k===i?' on
 $('#st').querySelectorAll('button').forEach(b=>b.onclick=()=>stage(+b.dataset.i));
 const s=S[i];$('#sp').innerHTML=`<div><h3 style="font-size:28px;margin-bottom:10px">${s[1]}</h3><p style="margin-bottom:12px">${s[2]}</p><p style="font-size:14px;color:var(--gd)"><b>Real project link:</b> ${s[3]}</p></div><div class="vis">${s[4]}</div>`}
 stage(0);
-// PROJECTS — add repo URLs in the last field of each row (leave '' to show "pending")
+
 const L=(a)=>a.map(t=>`<b class="l" style="${t[1]}">${t[0]}</b>`).join('');
 const bars=(a,l)=>`<span>${l}</span><div class="br">${a.map(v=>`<i style="height:${v}px"></i>`).join('')}</div>`;
 const BN=[L([['DOCS + SCHEMAS','top:12px;left:12px'],['VECTOR STORE','top:12px;right:12px'],['QUALITY CHECKS','bottom:42px;left:12px'],['SQL GUARDRAILS','bottom:42px;right:12px']])+'<div class="ct">ATLAS</div>',
 bars([30,50,38,64,46,60],'DATA QUALITY MONITOR · ANOMALY ALERT'),bars([40,60,30,50,44,36],'SITE A · NORTH ⇄ SQL SYNC ⇄ SITE B · SOUTH'),
 '<span>TEXAS RENTAL MARKET → PRICE PREDICTION</span><div style="margin-top:16px"><div class="hb" style="width:90%"></div><div class="hb" style="width:62%;background:#f58f8f"></div><div class="hb" style="width:78%;background:#f5c26b"></div></div>',
 bars([30,50,70,46,62,84],'CONTENT TRENDS · TV SHOWS VS MOVIES'),'<span>SYSTEM CALL BEHAVIOR MONITOR</span><div style="margin-top:10px;font:10px monospace;line-height:1.5">open() read() mmap() fork()</div><b class="l" style="right:14px;top:60px;border-color:#ff6a72;color:#ff8a9a">ANOMALY ALERT</b>'];
+
 const P=[['Atlas — Enterprise Data Intelligence & Governance Copilot','01 · 2026 / FEATURED BUILD','AI GOVERNANCE',['A data-aware AI copilot designed to help teams explore data, understand schemas, and surface governance issues in context.','Developing a hybrid retrieval-augmented generation (RAG) architecture with vector search and SQL-agent guardrails for natural-language data exploration and governance.','Implemented reusable workflows to detect missing values, duplicate records, invalid values, and potential PII columns in structured datasets.','Planned a Streamlit experience bringing together natural-language exploration, SQL-agent guardrails, and data-quality insights.'],['Python','RAG','LangChain / LlamaIndex','Chroma','Streamlit','Data Governance'],'https://github.com/siridasari001/Atlas'],
 ['DataSentinel — Data Quality & Anomaly Detection Platform','02 · 2026','DATA QUALITY',['Built a Python-based data quality and anomaly detection platform using Pandas, NumPy, SQLite, and Streamlit to automate dataset validation and monitoring.','Engineered reusable validation and profiling workflows to evaluate dataset completeness, consistency, structural integrity, and unusual customer behavior patterns.','Developed an interactive Streamlit dashboard with SQLite-backed quality results, enabling users to explore detected issues, assess data reliability, and prioritize quality improvements.'],['Python','Pandas','NumPy','Anomaly Detection','Streamlit','SQLite'],'https://github.com/siridasari001/DataSentinel'],
 ['Global Distributed Bookstore Database System','03 · FALL 2025','DISTRIBUTED DATABASES',['Architected a distributed bookstore database using horizontal fragmentation across three server sites to improve transaction efficiency, scalability, and fault tolerance.','Designed normalized site-level schemas, SQL query protocols, and cross-site synchronization workflows to maintain data consistency and support reliable distributed transactions.'],['SQL','Database Fragmentation','Distributed DB','Data Modeling'],''],
@@ -236,7 +284,7 @@ const P=[['Atlas — Enterprise Data Intelligence & Governance Copilot','01 · 2
 ['Netflix Content & Recommendation Insights','05 · SPRING 2025','BIG DATA ANALYTICS',['Performed EDA on TV shows and movies to identify viewing trends, content distribution, and catalog shifts.','Developed interactive dashboards and visual reporting.'],['EDA','Visualization','Dashboards'],''],
 ['System Call Intrusion Detection','06 · 2026','CYBERSECURITY',['Implemented process-level intrusion detection by learning normal behavior from system call sequences.','Represented sequences using a TF-IDF-inspired approach and measured behavioral similarity with cosine similarity.'],['Python','Anomaly Detection','TF-IDF','kNN'],'https://github.com/siridasari001/system-call-intrusion-detection']];
 $('#pg').innerHTML=P.map((p,i)=>`<article class="pc lift ${i%2?'lt':'dk'}"><div class="bn">${BN[i]}<div class="pill">${p[2]}</div></div><div class="pb"><div class="pd">${p[1]}</div><h3>${p[0]}</h3><ul>${p[3].map(b=>`<li><span>${b}</span></li>`).join('')}</ul><div class="tags">${p[4].map(t=>`<span class="tag pt">${t}</span>`).join('')}</div>${p[5]?`<a class="pl" href="${p[5]}" target="_blank" rel="noopener">View on GitHub ↗</a>`:'<span class="pl" style="text-decoration:none">GitHub link pending</span>'}</div></article>`).join('');
-// CASE STUDIES
+
 const CS=[['Atlas',[['Problem','Teams struggle to understand unfamiliar datasets and spot governance issues such as missing values or PII.'],['Approach','Combine dataset profiling, data-quality validation and metadata analysis with AI-assisted exploration.'],['Implemented','Reusable workflows that detect missing values, duplicate records, invalid values and potential PII columns in structured datasets.'],['In progress','A hybrid RAG architecture with vector search and SQL-agent guardrails for natural-language exploration. Still being developed.']]],
 ['DataSentinel',[['Problem','Unreliable data quietly undermines downstream analysis.'],['Approach','Reusable validation and profiling workflows covering completeness, consistency, structural integrity and unusual customer behavior.'],['Implemented','Detection of missing values, duplicates, schema violations and behavioral anomalies, built with Pandas, NumPy and SQLite.'],['Outcome','An interactive Streamlit dashboard with SQLite-backed results to explore issues, assess reliability and prioritize fixes.']]]];
 function cs(i){tabs('#ct',CS.map(c=>c[0]),i,cs);$('#cs').innerHTML=CS[i][1].map(x=>`<div class="box"><span class="eb" style="font-size:11px">${x[0]}</span><p style="margin-top:8px;font-size:14.5px;color:var(--tx)">${x[1]}</p></div>`).join('')}cs(0);
@@ -255,9 +303,8 @@ const all=[];T.forEach(g=>g.slice(1).forEach(t=>all.push([t,g[0]])));
 const F=['All','Programming','Data Analytics & ML','Databases & Warehousing','Data Engineering & AI','Visualization','Web Development','Tools'];
 function sk(i){tabs('#sf',F,i,sk);$('#sc').innerHTML=all.filter(x=>i===0||x[1]===F[i]).map(x=>`<span class="chip">${x[0]}</span>`).join('')}sk(0);
 
-// CERTIFICATIONS (hover, focus or tap to flip)
-const C=[['Tableau Desktop Foundations','Salesforce Certified','Issued March 20, 2026 · Credential ID 7571264','https://sforce.co/verifycerts'],['SQL (Basic)','HackerRank','Certificate verification available','https://www.hackerrank.com/certificates/6178767e40b0'],['SQL (Intermediate)','HackerRank','Certificate verification available','https://www.hackerrank.com/certificates/9c45f5d862d8'],['Microsoft Certified: Azure Fundamentals (AZ-900)','Microsoft','Earned January 26, 2024','https://learn.microsoft.com/en-us/users/siridasari-1688/credentials/certification/azure-fundamentals?tab=credentials-tab'],['Google Data Analytics Professional Certificate','Google · Coursera','Certificate verification available','https://www.coursera.org/account/accomplishments/specialization/certificate/7EKZLICXU0IT'],['AI & LLM Engineering Mastery — GenAI, RAG Complete Guide','Coursera','Certificate verification available','https://www.coursera.org/account/accomplishments/specialization/certificate/SOHQXQ2M7C5U'],
-['SnowPro Core Certification','Snowflake','Issued November 14, 2026 · Valid until Nov 14, 2028 · Credential ID S169233-261114-COF','https://achieve.snowflake.com/99f604ac-dea1-4bff-8c2a-01afd74ecd49']];
+// CERTIFICATIONS
+const C=[['Tableau Desktop Foundations','Salesforce Certified','Issued March 20, 2026 · Credential ID 7571264','https://sforce.co/verifycerts'],['SQL (Basic)','HackerRank','Certificate verification available','https://www.hackerrank.com/certificates/6178767e40b0'],['SQL (Intermediate)','HackerRank','Certificate verification available','https://www.hackerrank.com/certificates/9c45f5d862d8'],['Microsoft Certified: Azure Fundamentals (AZ-900)','Microsoft','Earned January 26, 2024','https://learn.microsoft.com/en-us/users/siridasari-1688/credentials/certification/azure-fundamentals?tab=credentials-tab'],['Google Data Analytics Professional Certificate','Google · Coursera','Certificate verification available','https://www.coursera.org/account/accomplishments/specialization/certificate/7EKZLICXU0IT'],['AI & LLM Engineering Mastery — GenAI, RAG Complete Guide','Coursera','Certificate verification available','https://www.coursera.org/account/accomplishments/specialization/certificate/SOHQXQ2M7C5U'],['SnowPro Core Certification','Snowflake','Issued November 14, 2026 · Valid until Nov 14, 2028 · Credential ID S169233-261114-COF','https://achieve.snowflake.com/99f604ac-dea1-4bff-8c2a-01afd74ecd49']];
 $('#fg').innerHTML=C.map((c,i)=>`<div class="fl" tabindex="0" aria-label="${c[0]} — press Enter to flip"><div class="fi"><div class="ff"><div class="top"><b>0${i+1}</b><small>HOVER TO FLIP ↻</small></div><b style="font-size:16px;line-height:1.3;margin-top:16px">${c[0]}</b><span style="font-size:13px;color:#4a5262;margin-top:6px">${c[1]}</span><span style="font-size:12px;color:#34527a;margin-top:6px">${c[2]}</span><small class="ft">PROFESSIONAL CREDENTIAL</small></div><div class="fb"><div style="width:36px;height:36px;border:1px solid #d9b060;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#d9b060;font-size:18px">✓</div><small style="color:#c9bdaa;font-weight:700;letter-spacing:1.2px;margin-top:14px">VERIFICATION LINK</small><b style="font:600 19px/1.25 'Playfair Display',serif;margin-top:6px">${c[0]}</b><small style="color:#c9bdaa;margin-top:4px">Issued by ${c[1]}</small><a href="${c[3]}" target="_blank" rel="noopener">Verify credential ↗</a></div></div></div>`).join('');
 document.querySelectorAll('.fl').forEach(f=>{f.onclick=e=>{if(!e.target.closest('a'))f.classList.toggle('on')};f.onkeydown=e=>{if(e.key==='Enter'&&e.target===f)f.classList.toggle('on')}});
 $('#et').innerHTML=['Data Engineering','Machine Learning','Generative AI','LLMs','RAG','Analytics','Distributed Databases'].map(t=>`<span class="t">${t}</span>`).join('');
